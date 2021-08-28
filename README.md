@@ -7,4 +7,4 @@ I added following patches:
 - scrollback (with scroll wheel)
 - w3m
 
-st.suckless.org/
+https://st.suckless.org/
