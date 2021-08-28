@@ -1,5 +1,5 @@
 # Simpel Terminal
-My "fork" of the Simple Terminal from suckless.org
+My "fork" of the Simple Terminal from suckless.org  
 I added following patches:
 
 - alpha
