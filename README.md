@@ -1,5 +1,5 @@
 # Simpel Terminal
-My "fork" of the Simple Terminal from suckless.org
+My "fork" of the Simple Terminal from suckless.org  
 I added following patches:
 
 - alpha
@@ -7,4 +7,4 @@ I added following patches:
 - scrollback (with scroll wheel)
 - w3m
 
-st.suckless.org/
+https://st.suckless.org/
