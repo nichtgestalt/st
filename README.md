@@ -6,5 +6,7 @@ I added following patches:
 - dynamic cursor color
 - scrollback (with scroll wheel)
 - w3m
+- any size
+- blinking cursor
 
 https://st.suckless.org/
