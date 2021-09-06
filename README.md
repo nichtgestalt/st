@@ -8,6 +8,5 @@ I added following patches:
 - w3m
 - any size
 - blinking cursor
-- xresources
 
 https://st.suckless.org/
