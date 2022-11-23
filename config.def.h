@@ -145,10 +145,10 @@ static const ColorScheme schemes[] = {
 	  "#bc5b4b", 
 	  "#678b8b", 
 	  "#afbcc9",
-	  //      cursor       ???     foreground  background 
-	  [256]="#cccccc", "#c678dd",},    7,          0,      256, 257},
+	  //      cursor       ???     foreground    background   cursor   ???
+	  [256]="#cccccc", "#c678dd",},    7,            0,        256,     257},
 
-	// Breeze
+	// One Half dark
 	{{"#232627", 
 	  "#ed1515", 
 	  "#11d116", 
@@ -165,26 +165,13 @@ static const ColorScheme schemes[] = {
 	  "#8e44ad", 
 	  "#16a085", 
 	  "#ffffff",
-	  //      cursor              foregrond  background
-	  [256]="#cccccc", "#555555"},     7,        0,      256, 257},
+	  [256]="#cccccc", "#555555"}, 7, 0, 256, 257},
 
-	// Doom One
-	{{"#282c34",
-	  "#ff6c6b", 
-	  "#98be67", 
-	  "#da8548",
-          "#51afef", 
-	  "#c678dd", 
-	  "#5699af", 
-	  "#bbc2cf",
-	  "#5b6268", 
-	  "#e45649", 
-	  "#50a14f", 
-	  "#ecbe7b",
-	  "#3071db", 
-	  "#a9a1e1", 
-	  "#46d9ff", 
-	  "#dfdfdf",
+	// One Half light
+	{{"#fafafa", "#e45649", "#50a14f", "#c18401",
+      "#0184bc", "#a626a4", "#0997b3", "#383a42",
+	  "#fafafa", "#e45649", "#50a14f", "#c18401",
+	  "#0184bc", "#a626a4", "#0997b3", "#383a42",
 	  [256]="#cccccc", "#555555"}, 7, 0, 256, 257},
 
 	// Solarized dark
@@ -194,7 +181,7 @@ static const ColorScheme schemes[] = {
 	  "#839496", "#6c71c4", "#93a1a1", "#fdf6e3",
 	  [256]="#93a1a1", "#fdf6e3"}, 12, 8, 256, 257},
 
-	// Solarized light - later nord?
+	// Solarized light
 	{{"#eee8d5", "#dc322f", "#859900", "#b58900",
 	  "#268bd2", "#d33682", "#2aa198", "#073642",
 	  "#fdf6e3", "#cb4b16", "#93a1a1", "#839496",
@@ -208,24 +195,12 @@ static const ColorScheme schemes[] = {
 	  "#83a598", "#d3869b", "#8ec07c", "#ebdbb2",
 	  [256]="#ebdbb2", "#555555"}, 15, 0, 256, 257},
 
-	// Gruvbox light - later kasugano
-	{{"#1b1b1b",
-          "#6673bf", 
-	  "#3ea290", 
-	  "#b0ead9",
-	  "#31658c", 
-	  "#596196", 
-	  "#8292b2", 
-	  "#c8cacc",
-	  "#4d4d4d", 
-	  "#899aff", 
-	  "#52ad91", 
-	  "#98c9bb",
-	  "#477ab3", 
-	  "#7882bf", 
-	  "#95a7cc", 
-	  "#ffffff",
-	  [256]="#cccccc", "#555555"}, 15, 0, 256, 257},
+	// Gruvbox light
+	{{"#fbf1c7", "#cc241d", "#98971a", "#d79921",
+	  "#458588", "#b16286", "#689d6a", "#7c6f64",
+	  "#928374", "#9d0006", "#79740e", "#b57614",
+	  "#076678", "#8f3f71", "#427b58", "#3c3836",
+	  [256]="#3c3836", "#555555"}, 15, 0, 256, 257},
 };
 
 static const char * const * colorname;
