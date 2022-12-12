@@ -1,10 +1,10 @@
-/* See LICENSE file for copyright and license details. */
+//  ___ _____              _           _ 
+// / __|_   _|__ _ _ _ __ (_)_ _  __ _| |
+// \__ \ | |/ -_) '_| '  \| | ' \/ _` | |
+// |___/ |_|\___|_| |_|_|_|_|_||_\__,_|_|
+//                -by nichtgestalt                                      
 
-/*
- * appearance
- *
- * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
- */
+// -===appearance===- 
 static char *font = "Hack Nerd Font Mono:pixelsize=18:antialias=true:autohint=true";
 static int borderpx = 10;
 
@@ -36,15 +36,15 @@ static float chscale = 1.0;
  */
 wchar_t *worddelimiters = L" ";
 
-/* selection timeouts (in milliseconds) */
+// -===selection timeouts (in milliseconds)===-
 static unsigned int doubleclicktimeout = 300;
 static unsigned int tripleclicktimeout = 600;
 
-/* alt screens */
+// -===alt screens===-
 int allowaltscreen = 1;
 
-/* allow certain non-interactive (insecure) window operations such as:
-   setting the clipboard text */
+/* allow certain non-interactive (insecure) window operations such as: 
+setting the clipboard text */
 int allowwindowops = 0;
 
 /*
@@ -56,24 +56,16 @@ int allowwindowops = 0;
 static double minlatency = 8;
 static double maxlatency = 33;
 
-/*
- * blinking timeout (set to 0 to disable blinking) for the terminal blinking
- * attribute.
- */
+// blinking timeout (set to 0 to disable blinking) for the terminal blinking attribute.
 static unsigned int blinktimeout = 800;
 
-/*
- * thickness of underline and bar cursors
- */
+// thickness of underline and bar cursors
 static unsigned int cursorthickness = 2;
 
-/*
- * bell volume. It must be a value between -100 and 100. Use 0 for disabling
- * it
- */
+// bell volume. It must be a value between -100 and 100. Use 0 for disabling it
 static int bellvolume = 0;
 
-/* default TERM value */
+// default TERM value
 char *termname = "st-256color";
 
 /*
@@ -93,7 +85,7 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-/* bg opacity */
+// bg opacity 
 float alpha = 0.95;
 
 typedef struct {
@@ -103,11 +95,9 @@ typedef struct {
 	unsigned int cs;               /* cursor */
 	unsigned int rcs;              /* reverse cursor */
 } ColorScheme;
-/*
- * Terminal colors (16 first used in escape sequence,
- * 2 last for custom cursor color),
- * foreground, background, cursor, reverse cursor
- */
+
+
+// Terminal colors (16 first used in escape sequence)
 static const ColorScheme schemes[] = {
 	// 0 st (dark)
 	{{"#191919", 
@@ -145,7 +135,7 @@ static const ColorScheme schemes[] = {
 	  "#bc5b4b", 
 	  "#678b8b", 
 	  "#afbcc9",
-	  //      cursor       ???     foreground    background   cursor   ???
+	  //                          foreground    background   cursor  reverse cursor
 	  [256]="#cccccc", "#c678dd",},    7,            0,        256,     257},
 
 	// 2 Breeze
@@ -193,12 +183,26 @@ static const ColorScheme schemes[] = {
 	  "#839496", "#6c71c4", "#93a1a1", "#fdf6e3",
 	  [256]="#93a1a1", "#fdf6e3"}, 12, 8, 256, 257},
 
-	// Solarized light
-	{{"#eee8d5", "#dc322f", "#859900", "#b58900",
-	  "#268bd2", "#d33682", "#2aa198", "#073642",
-	  "#fdf6e3", "#cb4b16", "#93a1a1", "#839496",
-	  "#657b83", "#6c71c4", "#586e75", "#002b36",
-	  [256]="#586e75", "#002b36"}, 12, 8, 256, 257},
+	{{ // Google dark
+	// normal colors
+           /*  0 black   */   "#1d1f21", 
+	   /*  1 red     */   "#cc342b", 
+           /*  2 green   */   "#198844", 
+	   /*  3 yellow  */   "#fba922",
+	   /*  4 blue    */   "#3971ed", 
+           /*  5 magenta */   "#a36ac7", 
+           /*  6 cyan    */   "#24c1e0", 
+	   /*  7 white   */   "#c5c8c6",
+	// bright colors
+	   /*  8 black   */   "#969896", 
+	   /*  9 red     */   "#cc342b", 
+	   /* 10 green   */   "#198844", 
+	   /* 11 yellow  */   "#fba922",
+	   /* 12 blue    */   "#3971ed", 
+	   /* 13 magenta */   "#a36ac7", 
+	   /* 14 cyan    */   "#24c1e0", 
+	   /* 15 white   */   "#ffffff",
+	  [256]="#586e75",   "#002b36"}, 15, 0, 256, 257},
 
 	// Gruvbox dark
 	{{"#282828", "#cc241d", "#98971a", "#d79921",
@@ -214,14 +218,11 @@ static const ColorScheme schemes[] = {
 	  "#076678", "#8f3f71", "#427b58", "#3c3836",
 	  [256]="#3c3836", "#555555"}, 15, 0, 256, 257},
 };
-
+// classic, breeze, one dark, ...
 static const char * const * colorname;
 int colorscheme = 3;
 
-/*
- * Default colors (colorname index)
- * foreground, background, cursor, reverse cursor
- */
+// Default colors (colorname index) foreground, background, cursor, reverse cursor
 unsigned int defaultfg;
 unsigned int defaultbg;
 unsigned int defaultcs;
@@ -234,7 +235,7 @@ static unsigned int defaultrcs;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 6;
+static unsigned int cursorshape = 4;
 
 /*
  * Default columns and rows numbers
