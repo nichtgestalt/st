@@ -109,7 +109,7 @@ typedef struct {
  * foreground, background, cursor, reverse cursor
  */
 static const ColorScheme schemes[] = {
-	// st (dark)
+	// 0 st (dark)
 	{{"#191919", 
 	  "#b02626", 
 	  "#40a626", 
@@ -128,7 +128,7 @@ static const ColorScheme schemes[] = {
 	  "#e0e3e7",
 	  [256]="#cccccc", "#555555"}, 7, 0, 256, 257},
 
-	// Bunsen Lab
+	// 1 Bunsen Lab
 	{{"#21333b",    /* black   */ 
 	  "#bc4b4f",    /* red     */
 	  "#4bbc97",    /* green   */
@@ -148,7 +148,7 @@ static const ColorScheme schemes[] = {
 	  //      cursor       ???     foreground    background   cursor   ???
 	  [256]="#cccccc", "#c678dd",},    7,            0,        256,     257},
 
-	// One Half dark
+	// 2 Breeze
 	{{"#232627", 
 	  "#ed1515", 
 	  "#11d116", 
@@ -167,12 +167,24 @@ static const ColorScheme schemes[] = {
 	  "#ffffff",
 	  [256]="#cccccc", "#555555"}, 7, 0, 256, 257},
 
-	// One Half light
-	{{"#fafafa", "#e45649", "#50a14f", "#c18401",
-      "#0184bc", "#a626a4", "#0997b3", "#383a42",
-	  "#fafafa", "#e45649", "#50a14f", "#c18401",
-	  "#0184bc", "#a626a4", "#0997b3", "#383a42",
-	  [256]="#cccccc", "#555555"}, 7, 0, 256, 257},
+	// 3 one dark
+	{{"#282c34",
+	  "#e06c75", 
+	  "#98c379", 
+	  "#d19a66",
+          "#61afef", 
+	  "#c678dd", 
+	  "#56b6c2", 
+	  "#abb2bf",
+	  "#5c6370", 
+	  "#c06c75", 
+	  "#98c378", 
+	  "#d19a66",
+	  "#61afef", 
+	  "#c678dd", 
+	  "#56b6c2", 
+	  "#ffffff",
+	  [256]="#cccccc", "#555555"}, 15, 0, 256, 257},
 
 	// Solarized dark
 	{{"#073642", "#dc322f", "#859900", "#b58900",
@@ -204,7 +216,7 @@ static const ColorScheme schemes[] = {
 };
 
 static const char * const * colorname;
-int colorscheme = 2;
+int colorscheme = 3;
 
 /*
  * Default colors (colorname index)
@@ -222,7 +234,7 @@ static unsigned int defaultrcs;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 6;
 
 /*
  * Default columns and rows numbers
@@ -283,8 +295,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ Mod1Mask,             XK_r,           kscrollup,      {.i = -1} },
-	{ Mod1Mask,             XK_t,           kscrolldown,    {.i = -1} },
+	{ Mod1Mask,             XK_g,           kscrollup,      {.i = -1} },
+	{ Mod1Mask,             XK_r,           kscrolldown,    {.i = -1} },
 	{ Mod1Mask,             XK_1,           selectscheme,   {.i =  0} },
 	{ Mod1Mask,             XK_2,           selectscheme,   {.i =  1} },
 	{ Mod1Mask,             XK_3,           selectscheme,   {.i =  2} },
